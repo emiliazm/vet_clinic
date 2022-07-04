@@ -1,4 +1,4 @@
-# curriculum-databases-projects-template
+# Vet Clinic
 
 This projects uses rational database for a vet clinic. I am creating a table of animal, inserting and selecting some of them.
 
