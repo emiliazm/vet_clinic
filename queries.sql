@@ -16,6 +16,41 @@ SELECT * from animals WHERE name <> 'Gabumon';
 
 SELECT * from animals WHERE weight_kg between 10.4 and 17.3;
 
+BEGIN;
+UPDATE animals
+SET species = 'unspecified'
+ROLLBACK;
+SELECT * from animals;
+
+
+BEGIN;
+UPDATE animals
+SET species = 'digimon'
+WHERE name like '%mon';
+UPDATE animals
+SET species = 'pokemon'
+WHERE species is null;
+COMMIT;
+SELECT * from animals;
+
+BEGIN;
+DELETE from animals;
+ROLLBACK;
+SELECT * from animals;
+
+BEGIN;
+DELETE from animals
+WHERE date_of_birth > '2022-01-01';
+SAVEPOINT delDate;
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+ROLLBACK TO delDate;
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+COMMIT;
+SELECT * from animals;
+
 SELECT COUNT(*)
 FROM animals;
 
