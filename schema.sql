@@ -87,3 +87,22 @@ age integer,
 date_of_graduation date,
 PRIMARY KEY (id)
 );
+
+-- Create a "join table" called specializations
+CREATE TABLE specializations (
+spec_id integer,
+vet_id integer,
+CONSTRAINT fk_vets FOREIGN KEY (vet_id) REFERENCES vets(id),
+CONSTRAINT fk_species FOREIGN KEY (spec_id) REFERENCES species(id)
+);
+SELECT * FROM specializations
+
+-- Create a "join table" called visits
+CREATE TABLE visits (
+animal_id integer,
+vet_id integer,
+date_of_visit date,
+CONSTRAINT fk_animals FOREIGN KEY (animal_id) REFERENCES animals(id),
+CONSTRAINT fk_vets FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
+SELECT * FROM visits
