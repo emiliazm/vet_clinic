@@ -116,3 +116,14 @@ create index id_btree on visits using btree(animal_id) where animal_id = 4;
 create index vets_asc1 on visits(vet_id asc) include (animal_id, date_of_visit);
 
 create index owners_asc1 on owners(email desc) include (id, full_name, age);
+
+
+-- Add email column to owners table
+ALTER TABLE animals ADD COLUMN email VARCHAR(120);
+
+-- Create indexes to optimize queries
+CREATE INDEX id_btree ON visits USING btree(animal_id) WHERE animal_id = 4;
+
+CREATE INDEX vets_asc ON visits(vet_id asc) INCLUDE (animal_id, date_of_visit);
+
+CREATE INDEX owners_asc ON owners(email desc) INCLUDE (id, full_name, age);
