@@ -124,3 +124,6 @@ ALTER TABLE animals ADD COLUMN email VARCHAR(120);
 -- Create indexes to optimize queries
 CREATE INDEX id_btree ON visits USING btree(animal_id) WHERE animal_id = 4;
 
+CREATE INDEX vets_asc ON visits(vet_id asc) INCLUDE (animal_id, date_of_visit);
+
+CREATE INDEX owners_asc ON owners(email desc) INCLUDE (id, full_name, age);
