@@ -192,6 +192,11 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@emilia_zm](https://twitter.com/emilia_zm)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emilia-zambrano-montero-aa30a611b/)
 
+👤 **Amaury Permer**
+
+- GitHub: [@Trictonicmp](https://github.com/trictonicmp)
+- LinkedIn: [Amaury Permer](https://www.linkedin.com/in/amaury-permer/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
