@@ -58,3 +58,6 @@ treatments_id INT,
 FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
 FOREIGN KEY (treatments_id) REFERENCES treatments (id)
 );
+
+CREATE INDEX patients_asc ON medical_histories(patients_id asc) INCLUDE (id, admitted_at);
+CREATE INDEX invoices_asc ON invoices(medical_history_id asc) INCLUDE (id, generated_at, payed_at);
