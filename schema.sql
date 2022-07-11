@@ -106,3 +106,13 @@ CONSTRAINT fk_animals FOREIGN KEY (animal_id) REFERENCES animals(id),
 CONSTRAINT fk_vets FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
 SELECT * FROM visits
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- Create index to optimize queries
+create index id_btree on visits using btree(animal_id) where animal_id = 4;
+
+create index vets_asc1 on visits(vet_id asc) include (animal_id, date_of_visit);
+
+create index owners_asc1 on owners(email desc) include (id, full_name, age);
