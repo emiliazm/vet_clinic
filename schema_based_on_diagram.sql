@@ -51,3 +51,10 @@ FOREIGN KEY (treatment_id) REFERENCES treatments(id),
 PRIMARY KEY (id)
 );
 
+-- Create table history_treatments_link 
+CREATE TABLE history_treatments_link (
+medical_history_id INT,
+treatments_id INT,
+FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
+FOREIGN KEY (treatments_id) REFERENCES treatments (id)
+);
