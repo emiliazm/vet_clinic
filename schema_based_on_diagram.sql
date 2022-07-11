@@ -60,4 +60,6 @@ FOREIGN KEY (treatments_id) REFERENCES treatments (id)
 );
 
 CREATE INDEX patients_asc ON medical_histories(patients_id asc) INCLUDE (id, admitted_at);
-CREATE INDEX invoices_asc ON invoices(medical_history_id asc) INCLUDE (id, generated_at, payed_at);
+CREATE INDEX medical_histories_asc ON invoices(medical_history_id asc) INCLUDE (id, generated_at, payed_at);
+CREATE INDEX invoices_asc ON invoice_items(invoice_id asc) INCLUDE (id, unit_price, quantity);
+CREATE INDEX treatments_asc ON invoice_items(treatment_id asc) INCLUDE (id, unit_price, quantity);
