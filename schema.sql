@@ -120,3 +120,7 @@ create index owners_asc1 on owners(email desc) include (id, full_name, age);
 
 -- Add email column to owners table
 ALTER TABLE animals ADD COLUMN email VARCHAR(120);
+
+-- Create indexes to optimize queries
+CREATE INDEX id_btree ON visits USING btree(animal_id) WHERE animal_id = 4;
+
