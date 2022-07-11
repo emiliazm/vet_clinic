@@ -64,3 +64,4 @@ CREATE INDEX medical_histories_asc ON invoices(medical_history_id asc) INCLUDE (
 CREATE INDEX invoices_asc ON invoice_items(invoice_id asc) INCLUDE (id, unit_price, quantity);
 CREATE INDEX treatments_asc ON invoice_items(treatment_id asc) INCLUDE (id, unit_price, quantity);
 CREATE INDEX medical_history_id_asc ON history_treatments_link (medical_history_id asc);
+CREATE INDEX treatments_id_asc ON history_treatments_link (treatments_id asc);
